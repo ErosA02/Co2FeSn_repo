@@ -1,0 +1,20 @@
+# QE scratch / binary data
+**/*.save/
+**/outdir/
+**/*.wfc*
+**/*.dat
+**/*.xml
+**/*.igk*
+**/*.hub*
+**/*.dvscf*
+**/*.dyn*
+**/*.modes
+**/*.charge
+**/*.paw
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store

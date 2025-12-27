@@ -1,0 +1,46 @@
+&control
+    calculation = 'scf',
+    prefix = 'Co2FeSn',
+    outdir = './outdir',
+    pseudo_dir = './pseudos',
+    verbosity = 'high',
+/
+&system
+    ibrav = 14,
+    celldm(1) = 7.80362,
+    celldm(2) = 1.0,
+    celldm(3) = 1.0,
+    celldm(4) = 0.5,
+    celldm(5) = 0.5,
+    celldm(6) = 0.5,
+    nat = 4, ntyp = 3,
+    ecutwfc = 100,
+    ecutrho = 800,
+    occupations = 'smearing',
+    smearing = 'gaussian',
+    degauss = 0.02,
+    nspin = 2,
+    starting_magnetization(1) = 0.50,  ! Co
+    starting_magnetization(2) = 0.50,  ! Fe
+
+/
+&electrons
+    conv_thr = 1.0d-8,
+    mixing_mode = 'local-TF',
+    mixing_beta = 0.2,
+/
+
+ATOMIC_SPECIES
+Co  58.933  Co.pbe-spn-kjpaw_psl.0.3.1.UPF
+Fe  55.845  Fe.pbe-spn-kjpaw_psl.1.0.0.UPF
+Sn 118.710  Sn.pbe-dn-kjpaw_psl.1.0.0.UPF
+
+ATOMIC_POSITIONS (crystal)
+Fe  0.500000000  0.500000000  0.500000000
+Sn  0.000000000  0.000000000  0.000000000
+Co  0.250000000  0.250000000  0.250000000
+Co  0.750000000  0.750000000  0.750000000
+
+K_POINTS automatic
+12 12 12 0 0 0
+
